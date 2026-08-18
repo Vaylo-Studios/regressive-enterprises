@@ -17,10 +17,10 @@ export default function Testimonials() {
     <section className="border-y hairline px-6 py-24 sm:px-10 sm:py-32">
       <div className="mx-auto max-w-[1600px]">
         <Reveal className="max-w-2xl">
-          <p className="text-xs font-medium uppercase tracking-[0.35em] text-ivory-dim">
+          <p className="text-xs font-medium uppercase tracking-[0.35em] text-ink-dim">
             From the water
           </p>
-          <h2 className="font-display mt-4 text-4xl font-bold leading-tight sm:text-6xl">
+          <h2 className="font-display mt-4 text-4xl font-bold leading-tight text-ink sm:text-6xl">
             What people say after we&rsquo;re gone.
           </h2>
         </Reveal>
@@ -30,7 +30,7 @@ export default function Testimonials() {
             <Reveal
               key={t.name}
               delay={i * 0.08}
-              className="overflow-hidden rounded-2xl border hairline"
+              className="overflow-hidden rounded-2xl border hairline bg-ivory"
             >
               <div className="relative aspect-[16/9] w-full">
                 <Image
@@ -42,9 +42,9 @@ export default function Testimonials() {
                 />
               </div>
               <div className="p-8">
-                <p className="text-lg leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
-                <p className="mt-6 text-sm font-medium">{t.name}</p>
-                <p className="text-xs uppercase tracking-[0.2em] text-ivory-dim">
+                <p className="text-lg leading-relaxed text-ink">&ldquo;{t.quote}&rdquo;</p>
+                <p className="mt-6 text-sm font-medium text-ink">{t.name}</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-ink-dim">
                   {t.location} &middot; {t.project}
                 </p>
               </div>

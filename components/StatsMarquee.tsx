@@ -1,56 +1,68 @@
-"use client";
+import Reveal from "@/components/Reveal";
 
-import { motion, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import { siteConfig } from "@/lib/site-config";
-
-const STATS = [
-  { value: new Date().getFullYear() - siteConfig.founded, suffix: "+", label: `Years in ${siteConfig.address.city}` },
-  { value: siteConfig.crew.size, suffix: "", label: "People on crew" },
-  { value: 4, suffix: "", label: "Counties served" },
-  { value: siteConfig.crew.referralSharePercent, suffix: "%", label: "Business from referrals" },
+const TRUST_ROW = [
+  {
+    title: "Built for the Coast",
+    desc: "Materials and methods chosen for what Florida's marine environment actually does to a structure.",
+    icon: (
+      <path
+        d="M4 17c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0M4 12c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0M12 3v6"
+        strokeWidth="1.6"
+      />
+    ),
+  },
+  {
+    title: "Quality. No Shortcuts.",
+    desc: "The same crew, the same standards, whether it's a cap repair or a full rebuild.",
+    icon: <path d="M5 12.5l4.5 4.5L19 7" strokeWidth="1.8" />,
+  },
+  {
+    title: "Clear Communication",
+    desc: "What's happening, why, and what it costs. No surprises in the invoice.",
+    icon: (
+      <path
+        d="M4 5h16v11H8l-4 4V5z"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+    ),
+  },
+  {
+    title: "Local & Reliable",
+    desc: "Serving the Gulf Coast since 2011, with a reputation built on showing up.",
+    icon: (
+      <path
+        d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z M12 12a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+    ),
+  },
 ];
-
-function Counter({ value, suffix }: { value: number; suffix: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-10%" });
-  const [display, setDisplay] = useState(0);
-
-  useEffect(() => {
-    if (!inView) return;
-    const duration = 1200;
-    const start = performance.now();
-
-    function tick(now: number) {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setDisplay(Math.round(eased * value));
-      if (progress < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }, [inView, value]);
-
-  return (
-    <span ref={ref}>
-      {display}
-      {suffix}
-    </span>
-  );
-}
 
 export default function StatsMarquee() {
   return (
-    <section className="border-y hairline">
-      <div className="mx-auto grid max-w-[1600px] grid-cols-2 divide-x divide-y hairline sm:grid-cols-4 sm:divide-y-0">
-        {STATS.map((stat) => (
-          <div key={stat.label} className="px-6 py-10 text-center sm:py-14">
-            <div className="font-display text-4xl font-bold sm:text-5xl">
-              <Counter value={stat.value} suffix={stat.suffix} />
-            </div>
-            <div className="mt-2 text-xs uppercase tracking-[0.2em] text-ivory-dim sm:text-sm">
-              {stat.label}
-            </div>
-          </div>
+    <section className="bg-plum px-6 py-14 sm:px-10 sm:py-16">
+      <div className="mx-auto grid max-w-[1600px] gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        {TRUST_ROW.map((item, i) => (
+          <Reveal key={item.title} delay={i * 0.06}>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              className="h-7 w-7 text-ivory-dim"
+              aria-hidden
+            >
+              {item.icon}
+            </svg>
+            <h3 className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-ivory">
+              {item.title}
+            </h3>
+            <p className="mt-2 max-w-xs text-sm leading-relaxed text-ivory-dim">
+              {item.desc}
+            </p>
+          </Reveal>
         ))}
       </div>
     </section>

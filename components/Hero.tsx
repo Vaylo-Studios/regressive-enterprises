@@ -11,97 +11,66 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "35%"]);
-  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const lineWidth = useTransform(scrollYProgress, [0, 1], ["100%", "40%"]);
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
 
   return (
-    <section
-      id="top"
-      ref={ref}
-      className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden px-6 pt-32 pb-10 sm:px-10"
-    >
-      <motion.div style={{ y: imageY }} className="pointer-events-none absolute inset-0 -top-[10%] h-[120%]">
-        <Image
-          src="/gallery/seawall-dock-boatlift-finished-01.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-plum via-plum/70 to-plum/30" />
-        <div className="absolute inset-0 bg-plum/30" />
-      </motion.div>
-
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.07]"
-        style={{
-          backgroundImage:
-            "linear-gradient(var(--ivory) 1px, transparent 1px), linear-gradient(90deg, var(--ivory) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-        }}
-      />
-
-      <motion.div style={{ y, opacity }} className="relative z-10 mt-16 sm:mt-24">
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.7 }}
-          className="mb-6 text-xs font-medium uppercase tracking-[0.35em] text-ivory-dim"
-        >
-          Clearwater, Florida &middot; Est. 2011
-        </motion.p>
-
-        <h1 className="font-display text-[15vw] font-bold leading-[0.85] tracking-tight sm:text-[11vw] lg:text-[9.5rem]">
-          Built to
-          <br />
-          <span className="text-stroke">hold up.</span>
-        </h1>
-
+    <section id="top" ref={ref} className="relative pt-24 sm:pt-28">
+      <div className="mx-auto grid max-w-[1600px] items-center gap-10 px-6 pb-14 pt-8 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:px-10 lg:pb-0 lg:pt-0">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.7 }}
-          className="mt-10 max-w-xl text-lg text-ivory-dim sm:text-xl"
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          Dock repair. Boat lifts. Seawalls. Storm-ready waterfront work across
-          Florida&rsquo;s Gulf Coast. Fifteen years in, we still answer the phone
-          and stand behind the work.
+          <p className="text-xs font-medium uppercase tracking-[0.35em] text-ink-dim">
+            Florida Gulf Coast
+          </p>
+
+          <h1 className="font-display mt-4 text-5xl font-bold leading-[0.95] tracking-tight text-ink sm:text-6xl lg:text-7xl">
+            Marine construction.
+            <br />
+            <span className="font-accent text-plum">Built to last.</span>
+          </h1>
+
+          <p className="mt-6 max-w-md text-lg text-ink-dim">
+            Dock repair, boat lifts, seawalls, and storm-ready waterfront
+            structures across Florida&rsquo;s Gulf Coast. Fifteen years in,
+            we still answer the phone and stand behind the work.
+          </p>
+
+          <div className="mt-9 flex flex-wrap items-center gap-4">
+            <a
+              href="#still-standing"
+              className="rounded-full bg-plum px-7 py-3.5 text-sm font-semibold tracking-wide text-ivory transition-transform hover:-translate-y-0.5"
+            >
+              View Our Work
+            </a>
+            <a
+              href="#services"
+              className="inline-flex items-center gap-2 text-sm font-medium tracking-wide text-ink transition-colors hover:text-plum"
+            >
+              Our Services
+              <span aria-hidden>&rarr;</span>
+            </a>
+          </div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.7 }}
-          className="mt-10 flex flex-wrap items-center gap-4"
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl sm:aspect-[16/10] lg:aspect-[4/5] lg:h-[80vh] lg:max-h-[820px]"
         >
-          <a
-            href="#start"
-            className="rounded-full bg-ivory px-7 py-3.5 text-sm font-semibold tracking-wide text-plum transition-transform hover:-translate-y-0.5"
-          >
-            Show Us What&rsquo;s Going On
-          </a>
-          <a
-            href="#services"
-            className="rounded-full border hairline px-7 py-3.5 text-sm font-medium tracking-wide text-ivory-dim transition-colors hover:text-ivory"
-          >
-            See the work
-          </a>
+          <motion.div style={{ y: imageY }} className="absolute inset-0 -top-[8%] h-[116%]">
+            <Image
+              src="/gallery/seawall-dock-boatlift-finished-01.jpg"
+              alt="Completed seawall, dock, and boat lift install on a Pinellas County waterfront property"
+              fill
+              priority
+              sizes="(min-width: 1024px) 55vw, 100vw"
+              className="object-cover"
+            />
+          </motion.div>
         </motion.div>
-      </motion.div>
-
-      <div className="relative z-10 mt-20 flex items-end justify-between gap-6">
-        <motion.div style={{ width: lineWidth }} className="h-px bg-ivory/30" />
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="shrink-0 text-xs uppercase tracking-[0.3em] text-ivory-dim"
-        >
-          Scroll
-        </motion.span>
       </div>
     </section>
   );

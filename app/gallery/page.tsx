@@ -17,17 +17,17 @@ export default function GalleryPage() {
       <main id="main" className="px-6 pb-24 pt-32 sm:px-10 sm:pt-40">
         <div className="mx-auto max-w-[1600px]">
           <Reveal className="max-w-2xl">
-            <p className="text-xs font-medium uppercase tracking-[0.35em] text-ivory-dim">
+            <p className="text-xs font-medium uppercase tracking-[0.35em] text-ink-dim">
               Gallery
             </p>
-            <h1 className="font-display mt-4 text-4xl font-bold leading-tight sm:text-6xl">
+            <h1 className="font-display mt-4 text-4xl font-bold leading-tight text-ink sm:text-6xl">
               The work, not just the pitch.
             </h1>
           </Reveal>
 
           {GALLERY.length > 0 ? (
             <>
-              <Reveal delay={0.04} className="mt-16 overflow-hidden rounded-2xl border hairline">
+              <Reveal delay={0.04} className="mt-16 overflow-hidden rounded-2xl border hairline bg-ivory">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={GALLERY[0].image}
@@ -35,12 +35,12 @@ export default function GalleryPage() {
                   className="aspect-[16/9] w-full object-cover sm:aspect-[21/9]"
                 />
                 <div className="p-6 sm:p-8">
-                  <span className="text-xs uppercase tracking-[0.2em] text-ivory-dim">
+                  <span className="text-xs uppercase tracking-[0.2em] text-plum">
                     {GALLERY[0].category}
                     {GALLERY[0].location ? ` · ${GALLERY[0].location}` : ""}
                     {GALLERY[0].year ? ` · ${GALLERY[0].year}` : ""}
                   </span>
-                  <p className="mt-2 text-base text-ivory-dim">{GALLERY[0].caption}</p>
+                  <p className="mt-2 text-base text-ink-dim">{GALLERY[0].caption}</p>
                 </div>
               </Reveal>
 
@@ -49,17 +49,17 @@ export default function GalleryPage() {
                   <Reveal
                     key={p.image}
                     delay={i * 0.04}
-                    className="overflow-hidden rounded-2xl border hairline"
+                    className="overflow-hidden rounded-2xl border hairline bg-ivory"
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={p.image} alt={p.caption} className="aspect-[4/3] w-full object-cover" />
                     <div className="p-6">
-                      <span className="text-xs uppercase tracking-[0.2em] text-ivory-dim">
+                      <span className="text-xs uppercase tracking-[0.2em] text-plum">
                         {p.category}
                         {p.location ? ` · ${p.location}` : ""}
                         {p.year ? ` · ${p.year}` : ""}
                       </span>
-                      <p className="mt-2 text-sm text-ivory-dim">{p.caption}</p>
+                      <p className="mt-2 text-sm text-ink-dim">{p.caption}</p>
                     </div>
                   </Reveal>
                 ))}
@@ -67,14 +67,14 @@ export default function GalleryPage() {
             </>
           ) : (
             <Reveal delay={0.1} className="mt-16 rounded-2xl border hairline p-10 sm:p-16">
-              <p className="text-lg text-ivory-dim">
+              <p className="text-lg text-ink-dim">
                 We&rsquo;re building out a real photo record of finished
                 work, project by project. Check back soon, or call us and
                 we&rsquo;ll walk you through recent jobs directly.
               </p>
               <a
                 href={siteConfig.phone.href}
-                className="mt-8 inline-flex items-center justify-center rounded-full border hairline px-8 py-4 text-base font-semibold tracking-wide text-ivory transition-colors hover:bg-ivory hover:text-plum"
+                className="mt-8 inline-flex items-center justify-center rounded-full border hairline px-8 py-4 text-base font-semibold tracking-wide text-ink transition-colors hover:bg-plum hover:text-ivory"
               >
                 Call {siteConfig.phone.display}
               </a>

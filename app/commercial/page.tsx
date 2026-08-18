@@ -45,14 +45,14 @@ export default function CommercialPage() {
       <main id="main" className="px-6 pb-24 pt-32 sm:px-10 sm:pt-40">
         <div className="mx-auto max-w-[1600px]">
           <Reveal className="max-w-2xl">
-            <p className="text-xs font-medium uppercase tracking-[0.35em] text-ivory-dim">
+            <p className="text-xs font-medium uppercase tracking-[0.35em] text-ink-dim">
               Commercial &amp; recurring
             </p>
-            <h1 className="font-display mt-4 text-4xl font-bold leading-tight sm:text-6xl">
+            <h1 className="font-display mt-4 text-4xl font-bold leading-tight text-ink sm:text-6xl">
               &ldquo;Call us when something breaks&rdquo; becomes &ldquo;we
               help make sure it doesn&rsquo;t.&rdquo;
             </h1>
-            <p className="mt-6 text-lg text-ivory-dim">
+            <p className="mt-6 text-lg text-ink-dim">
               Annual and semiannual maintenance programs for the properties
               that can&rsquo;t afford surprises.
             </p>
@@ -65,14 +65,14 @@ export default function CommercialPage() {
                 delay={i * 0.05}
                 className="rounded-2xl border hairline p-8 sm:p-10"
               >
-                <h2 className="font-display text-xl font-bold">{a.title}</h2>
-                <p className="mt-3 text-ivory-dim">{a.detail}</p>
+                <h2 className="font-display text-xl font-bold text-ink">{a.title}</h2>
+                <p className="mt-3 text-ink-dim">{a.detail}</p>
               </Reveal>
             ))}
           </div>
 
-          <Reveal delay={0.2} className="mt-16 rounded-2xl border hairline bg-plum-deep p-8 sm:p-12">
-            <h2 className="font-display text-2xl font-bold sm:text-3xl">
+          <Reveal delay={0.2} className="mt-16 rounded-2xl bg-plum p-8 sm:p-12">
+            <h2 className="font-display text-2xl font-bold text-ivory sm:text-3xl">
               How a maintenance program works
             </h2>
             <ol className="mt-6 grid gap-6 sm:grid-cols-3">

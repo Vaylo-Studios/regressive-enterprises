@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Space_Grotesk, Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import MobileCTA from "@/components/MobileCTA";
@@ -16,6 +16,13 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
+});
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  weight: ["500"],
+  style: ["italic"],
 });
 
 const description =
@@ -75,12 +82,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${fraunces.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col grain bg-plum text-ivory pb-16 md:pb-0">
+      <body className="min-h-full flex flex-col grain bg-ivory text-ink pb-16 md:pb-0">
         <a
           href="#main"
-          className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-ivory px-5 py-2.5 text-sm font-semibold text-plum transition-transform focus:translate-y-0"
+          className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-plum px-5 py-2.5 text-sm font-semibold text-ivory transition-transform focus:translate-y-0"
         >
           Skip to content
         </a>

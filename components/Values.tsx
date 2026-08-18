@@ -29,13 +29,13 @@ const VALUES = [
 
 export default function Values() {
   return (
-    <section id="values" className="border-t hairline bg-plum-deep px-6 py-28 sm:px-10 sm:py-40">
+    <section id="values" className="border-t hairline px-6 py-28 sm:px-10 sm:py-40">
       <div className="mx-auto max-w-[1600px]">
         <Reveal className="max-w-2xl">
-          <p className="text-xs font-medium uppercase tracking-[0.35em] text-ivory-dim">
+          <p className="text-xs font-medium uppercase tracking-[0.35em] text-ink-dim">
             Keep the Standards
           </p>
-          <h2 className="mt-6 font-display text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-6xl">
+          <h2 className="mt-6 font-display text-4xl font-bold leading-[1.05] text-ink sm:text-5xl lg:text-6xl">
             Progress doesn&rsquo;t require lowering your standards.
           </h2>
         </Reveal>
@@ -43,9 +43,9 @@ export default function Values() {
         <div className="mt-16 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {VALUES.map((v, i) => (
             <Reveal key={v.title} delay={(i % 3) * 0.08}>
-              <div className="border-t hairline pt-6">
-                <h3 className="font-display text-xl font-bold">{v.title}</h3>
-                <p className="mt-3 text-ivory-dim">{v.desc}</p>
+              <div className="border-t-2 border-plum pt-6">
+                <h3 className="font-display text-xl font-bold text-ink">{v.title}</h3>
+                <p className="mt-3 text-ink-dim">{v.desc}</p>
               </div>
             </Reveal>
           ))}

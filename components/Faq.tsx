@@ -11,10 +11,10 @@ export default function Faq() {
     <section id="faq" className="border-y hairline px-6 py-24 sm:px-10 sm:py-32">
       <div className="mx-auto max-w-[1600px]">
         <Reveal className="max-w-2xl">
-          <p className="text-xs font-medium uppercase tracking-[0.35em] text-ivory-dim">
+          <p className="text-xs font-medium uppercase tracking-[0.35em] text-ink-dim">
             Questions
           </p>
-          <h2 className="font-display mt-4 text-4xl font-bold leading-tight sm:text-6xl">
+          <h2 className="font-display mt-4 text-4xl font-bold leading-tight text-ink sm:text-6xl">
             What people ask before they call.
           </h2>
         </Reveal>
@@ -30,12 +30,12 @@ export default function Faq() {
                   aria-expanded={isOpen}
                   className="flex w-full items-center justify-between gap-6 py-6 text-left"
                 >
-                  <span className="font-display text-lg font-bold sm:text-xl">
+                  <span className="font-display text-lg font-bold text-ink sm:text-xl">
                     {item.question}
                   </span>
                   <span
                     aria-hidden
-                    className={`shrink-0 text-2xl text-ivory-dim transition-transform duration-300 ${
+                    className={`shrink-0 text-2xl text-plum transition-transform duration-300 ${
                       isOpen ? "rotate-45" : ""
                     }`}
                   >
@@ -47,7 +47,7 @@ export default function Faq() {
                     isOpen ? "grid-rows-[1fr] pb-6 opacity-100" : "grid-rows-[0fr] opacity-0"
                   }`}
                 >
-                  <p className="min-h-0 max-w-2xl text-ivory-dim">{item.answer}</p>
+                  <p className="min-h-0 max-w-2xl text-ink-dim">{item.answer}</p>
                 </div>
               </div>
             );

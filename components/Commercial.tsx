@@ -10,13 +10,13 @@ const AUDIENCE = [
 
 export default function Commercial() {
   return (
-    <section id="commercial" className="border-y hairline bg-plum-deep px-6 py-24 sm:px-10 sm:py-32">
+    <section id="commercial" className="bg-plum px-6 py-24 sm:px-10 sm:py-32">
       <div className="mx-auto grid max-w-[1600px] gap-16 lg:grid-cols-2 lg:gap-24">
         <Reveal>
           <p className="text-xs font-medium uppercase tracking-[0.35em] text-ivory-dim">
             Commercial &amp; recurring
           </p>
-          <h2 className="font-display mt-4 text-4xl font-bold leading-tight sm:text-6xl">
+          <h2 className="font-display mt-4 text-4xl font-bold leading-tight text-ivory sm:text-6xl">
             &ldquo;Call us when something breaks&rdquo; becomes &ldquo;we
             help make sure it doesn&rsquo;t.&rdquo;
           </h2>
@@ -31,7 +31,7 @@ export default function Commercial() {
             {AUDIENCE.map((item) => (
               <li
                 key={item}
-                className="flex items-center gap-4 border-b hairline pb-4 text-lg"
+                className="flex items-center gap-4 border-b hairline-invert pb-4 text-lg text-ivory"
               >
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-ivory" />
                 {item}
@@ -47,7 +47,7 @@ export default function Commercial() {
             </a>
             <a
               href="/commercial"
-              className="inline-flex items-center rounded-full border hairline px-7 py-3.5 text-sm font-semibold tracking-wide text-ivory transition-colors hover:bg-ivory hover:text-plum"
+              className="inline-flex items-center rounded-full border hairline-invert px-7 py-3.5 text-sm font-semibold tracking-wide text-ivory transition-colors hover:bg-ivory hover:text-plum"
             >
               How it works
             </a>
