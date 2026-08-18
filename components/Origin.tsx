@@ -13,32 +13,27 @@ const STATS = [
 
 export default function Origin() {
   return (
-    <section id="origin" className="grid lg:grid-cols-2">
-      <Reveal className="relative min-h-[420px] w-full overflow-hidden lg:min-h-[640px]">
-        <Image
-          src={siteConfig.founder.photo ?? "/gallery/site/boat.png"}
-          alt={`${siteConfig.founder.name}, founder of ${siteConfig.name}, on the dock`}
-          fill
-          sizes="(min-width: 1024px) 50vw, 100vw"
-          className="object-cover object-top"
-        />
+    <section id="origin" className="grid lg:grid-cols-2 lg:items-center">
+      <Reveal className="flex justify-center px-6 py-16 sm:px-10 sm:py-20 lg:py-24">
+        <div className="w-full max-w-sm">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
+            <Image
+              src={siteConfig.founder.photo ?? "/gallery/site/boat.png"}
+              alt={`${siteConfig.founder.name}, founder of ${siteConfig.name}, on the dock`}
+              fill
+              sizes="(min-width: 1024px) 400px, 90vw"
+              className="object-cover"
+            />
+          </div>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-plum-deep/90 via-plum-deep/10 to-transparent" />
-
-        <div className="absolute inset-x-6 bottom-6 sm:inset-x-8 sm:bottom-8">
-          <p className="font-accent text-4xl italic leading-none text-ivory/40 sm:text-5xl">
-            &ldquo;
-          </p>
-          <p className="font-accent -mt-3 max-w-sm text-xl italic leading-snug text-ivory sm:text-2xl">
-            Maybe everybody needs to regress a little.
-          </p>
-          <div className="mt-5 flex items-center gap-3 border-t border-ivory/20 pt-4">
-            <p className="font-accent text-xl text-ivory sm:text-2xl">
-              {siteConfig.founder.name}
+          <div className="mt-6 border-l-2 border-plum pl-4">
+            <p className="font-accent text-xl italic leading-snug text-ink sm:text-2xl">
+              &ldquo;Maybe everybody needs to regress a little.&rdquo;
             </p>
-            <span className="h-1 w-1 rounded-full bg-ivory/40" />
-            <p className="text-xs uppercase tracking-[0.25em] text-ivory/70">
-              Founder
+            <p className="mt-3 text-sm font-medium tracking-wide text-ink-dim">
+              {siteConfig.founder.name}
+              <span className="mx-2 text-ink-dim/50">&middot;</span>
+              <span className="uppercase tracking-[0.2em]">Founder</span>
             </p>
           </div>
         </div>
