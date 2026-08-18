@@ -1,13 +1,19 @@
 import { siteConfig } from "@/lib/site-config";
 
 const NAV = [
-  { label: "Services", href: "#services" },
-  { label: "Projects", href: "#still-standing" },
-  { label: "Values", href: "#values" },
-  { label: "Commercial", href: "#commercial" },
-  { label: "About", href: "#origin" },
-  { label: "Start a Project", href: "#start" },
+  { label: "Services", href: "/services" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Commercial", href: "/commercial" },
+  { label: "Values", href: "/#values" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Start a Project", href: "/#start" },
 ];
+
+const SOCIALS = [
+  { label: "Instagram", href: siteConfig.socials.instagram },
+  { label: "Facebook", href: siteConfig.socials.facebook },
+  { label: "YouTube", href: siteConfig.socials.youtube },
+].filter((s) => s.href);
 
 export default function Footer() {
   return (
@@ -52,6 +58,15 @@ export default function Footer() {
             {siteConfig.address.city}, {siteConfig.address.state}
           </span>
           <span>Since {siteConfig.founded}</span>
+          {SOCIALS.length > 0 ? (
+            <div className="mt-2 flex gap-4">
+              {SOCIALS.map((s) => (
+                <a key={s.label} href={s.href} className="transition-colors hover:text-ivory">
+                  {s.label}
+                </a>
+              ))}
+            </div>
+          ) : null}
         </div>
       </div>
 

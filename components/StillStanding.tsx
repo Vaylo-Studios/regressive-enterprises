@@ -1,11 +1,9 @@
 import Reveal from "@/components/Reveal";
+import { GALLERY } from "@/lib/gallery";
 
-const PROJECTS = [
-  { year: "2013", type: "Seawall Cap Repair", note: "Belleair Bluffs. Still holding, no re-cap needed." },
-  { year: "2017", type: "Boat Lift Replacement", note: "Indian Rocks Beach. Same cradle, three storm seasons later." },
-  { year: "2019", type: "Full Dock Rebuild", note: "Clearwater Harbor. Rebuilt after direct hurricane impact, untouched since." },
-];
-
+// TODO(client-data): once real project photos exist in lib/gallery.ts, pull
+// a handful of them in here as photo cards. Until then this stays honest
+// about being a philosophy statement, not a set of fabricated case studies.
 export default function StillStanding() {
   return (
     <section id="still-standing" className="border-y hairline px-6 py-24 sm:px-10 sm:py-32">
@@ -19,32 +17,36 @@ export default function StillStanding() {
             hurricane season.
           </h2>
           <p className="mt-6 text-lg text-ivory-dim">
-            Every so often we go back and check on work we finished years ago.
-            That&rsquo;s better proof than anything we could say about
-            ourselves.
+            Every so often we go back and check on work we finished years
+            ago. We&rsquo;re building out a photo record of that work,
+            project by project, so you can see it instead of taking our
+            word for it.
           </p>
         </Reveal>
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-3">
-          {PROJECTS.map((p, i) => (
-            <Reveal key={p.year} delay={i * 0.08}>
-              <div className="group relative overflow-hidden rounded-2xl border hairline p-8">
-                <div
-                  aria-hidden
-                  className="absolute inset-0 -z-10 bg-[linear-gradient(155deg,var(--color-rust)_0%,transparent_55%)] opacity-[0.14] transition-opacity duration-500 group-hover:opacity-25"
-                />
-                <span className="font-display text-3xl font-bold text-ivory-dim">
-                  {p.year}
-                </span>
-                <h3 className="font-display mt-4 text-xl font-bold">{p.type}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ivory-dim">{p.note}</p>
-                <span className="mt-6 inline-block text-xs uppercase tracking-[0.25em] text-ivory-dim">
-                  Still standing
-                </span>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal delay={0.1} className="mt-14">
+          {GALLERY.length > 0 ? (
+            <div className="grid gap-8 sm:grid-cols-3">
+              {GALLERY.slice(0, 3).map((p) => (
+                <div key={p.image} className="group relative overflow-hidden rounded-2xl border hairline p-8">
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 -z-10 bg-[linear-gradient(155deg,var(--color-rust)_0%,transparent_55%)] opacity-[0.14] transition-opacity duration-500 group-hover:opacity-25"
+                  />
+                  <span className="font-display text-sm text-ivory-dim">{p.category}</span>
+                  <p className="mt-4 text-sm leading-relaxed text-ivory-dim">{p.caption}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <a
+              href="/gallery"
+              className="inline-flex items-center gap-3 rounded-full border hairline px-7 py-3.5 text-sm font-semibold tracking-wide text-ivory transition-colors hover:bg-ivory hover:text-plum"
+            >
+              See the project gallery
+            </a>
+          )}
+        </Reveal>
       </div>
     </section>
   );

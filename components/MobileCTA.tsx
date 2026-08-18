@@ -12,7 +12,7 @@ export default function MobileCTA() {
         Call
       </a>
       <a
-        href="#start"
+        href="/#start"
         className="flex flex-1 items-center justify-center bg-ivory py-4 text-sm font-semibold tracking-wide text-plum"
       >
         Start a Project

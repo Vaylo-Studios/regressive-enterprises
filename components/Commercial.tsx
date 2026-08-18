@@ -38,12 +38,20 @@ export default function Commercial() {
               </li>
             ))}
           </ul>
-          <a
-            href="#start"
-            className="mt-8 inline-block rounded-full bg-ivory px-7 py-3.5 text-sm font-semibold tracking-wide text-plum transition-transform hover:-translate-y-0.5"
-          >
-            Talk to us about a maintenance program
-          </a>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a
+              href="/#start"
+              className="inline-block rounded-full bg-ivory px-7 py-3.5 text-sm font-semibold tracking-wide text-plum transition-transform hover:-translate-y-0.5"
+            >
+              Talk to us about a maintenance program
+            </a>
+            <a
+              href="/commercial"
+              className="inline-flex items-center rounded-full border hairline px-7 py-3.5 text-sm font-semibold tracking-wide text-ivory transition-colors hover:bg-ivory hover:text-plum"
+            >
+              How it works
+            </a>
+          </div>
         </Reveal>
       </div>
     </section>

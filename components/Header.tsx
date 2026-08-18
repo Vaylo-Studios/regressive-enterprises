@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 import { siteConfig } from "@/lib/site-config";
 
 const NAV = [
-  { label: "Services", href: "#services" },
-  { label: "Projects", href: "#still-standing" },
-  { label: "Values", href: "#values" },
-  { label: "Commercial", href: "#commercial" },
-  { label: "About", href: "#origin" },
+  { label: "Services", href: "/services" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Commercial", href: "/commercial" },
+  { label: "Values", href: "/#values" },
+  { label: "About", href: "/#origin" },
 ];
 
 export default function Header() {
@@ -32,7 +32,7 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 sm:px-10">
-        <a href="#top" className="font-display text-lg font-bold tracking-tight sm:text-xl">
+        <a href="/" className="font-display text-lg font-bold tracking-tight sm:text-xl">
           REGRESSIVE
           <span className="text-ivory-dim"> ENTERPRISES</span>
         </a>
@@ -57,7 +57,7 @@ export default function Header() {
             {siteConfig.phone.display}
           </a>
           <a
-            href="#start"
+            href="/#start"
             className="rounded-full border hairline px-5 py-2.5 text-sm font-medium tracking-wide transition-colors hover:bg-ivory hover:text-plum"
           >
             Start a Project
