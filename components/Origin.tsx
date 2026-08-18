@@ -14,36 +14,34 @@ const STATS = [
 export default function Origin() {
   return (
     <section id="origin" className="grid lg:grid-cols-2">
-      <Reveal className="relative min-h-[320px] w-full overflow-hidden lg:min-h-[560px]">
+      <Reveal className="relative min-h-[420px] w-full overflow-hidden lg:min-h-[640px]">
         <Image
-          src="/gallery/site/boat.png"
-          alt="Regressive Enterprises crew on the water off Florida's Gulf Coast"
+          src={siteConfig.founder.photo ?? "/gallery/site/boat.png"}
+          alt={`${siteConfig.founder.name}, founder of ${siteConfig.name}, on the dock`}
           fill
           sizes="(min-width: 1024px) 50vw, 100vw"
-          className="object-cover"
+          className="object-cover object-top"
         />
 
-        {siteConfig.founder.photo ? (
-          <div className="absolute bottom-6 left-6 flex items-center gap-3 rounded-2xl bg-ivory/90 p-3 pr-5 backdrop-blur-md sm:bottom-8 sm:left-8">
-            <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full sm:h-16 sm:w-16">
-              <Image
-                src={siteConfig.founder.photo}
-                alt={siteConfig.founder.name}
-                fill
-                sizes="64px"
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <p className="font-accent text-lg text-plum sm:text-xl">
-                {siteConfig.founder.name}
-              </p>
-              <p className="text-xs uppercase tracking-[0.2em] text-ink-dim">
-                Founder
-              </p>
-            </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-plum-deep/90 via-plum-deep/10 to-transparent" />
+
+        <div className="absolute inset-x-6 bottom-6 sm:inset-x-8 sm:bottom-8">
+          <p className="font-accent text-4xl italic leading-none text-ivory/40 sm:text-5xl">
+            &ldquo;
+          </p>
+          <p className="font-accent -mt-3 max-w-sm text-xl italic leading-snug text-ivory sm:text-2xl">
+            Maybe everybody needs to regress a little.
+          </p>
+          <div className="mt-5 flex items-center gap-3 border-t border-ivory/20 pt-4">
+            <p className="font-accent text-xl text-ivory sm:text-2xl">
+              {siteConfig.founder.name}
+            </p>
+            <span className="h-1 w-1 rounded-full bg-ivory/40" />
+            <p className="text-xs uppercase tracking-[0.25em] text-ivory/70">
+              Founder
+            </p>
           </div>
-        ) : null}
+        </div>
       </Reveal>
 
       <div className="relative overflow-hidden px-6 py-16 sm:px-10 sm:py-20 lg:py-24">
