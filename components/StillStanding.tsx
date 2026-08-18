@@ -27,12 +27,21 @@ export default function StillStanding() {
 
         <div className="mt-16 grid gap-8 sm:grid-cols-3">
           {PROJECTS.map((p, i) => (
-            <Reveal key={p.year} delay={i * 0.08} className="rounded-2xl border hairline p-8">
-              <span className="font-display text-3xl font-bold text-ivory-dim">
-                {p.year}
-              </span>
-              <h3 className="font-display mt-4 text-xl font-bold">{p.type}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-ivory-dim">{p.note}</p>
+            <Reveal key={p.year} delay={i * 0.08}>
+              <div className="group relative overflow-hidden rounded-2xl border hairline p-8">
+                <div
+                  aria-hidden
+                  className="absolute inset-0 -z-10 bg-[linear-gradient(155deg,var(--color-rust)_0%,transparent_55%)] opacity-[0.14] transition-opacity duration-500 group-hover:opacity-25"
+                />
+                <span className="font-display text-3xl font-bold text-ivory-dim">
+                  {p.year}
+                </span>
+                <h3 className="font-display mt-4 text-xl font-bold">{p.type}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-ivory-dim">{p.note}</p>
+                <span className="mt-6 inline-block text-xs uppercase tracking-[0.25em] text-ivory-dim">
+                  Still standing
+                </span>
+              </div>
             </Reveal>
           ))}
         </div>

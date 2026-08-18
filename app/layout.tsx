@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import MobileCTA from "@/components/MobileCTA";
+import { siteConfig } from "@/lib/site-config";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -15,10 +17,45 @@ const inter = Inter({
   weight: ["400", "500", "600"],
 });
 
+const description =
+  "Clearwater's coastal property and marine infrastructure company. Docks, boat lifts, seawalls, and storm-ready waterfront work across Pinellas, Hillsborough, Pasco, and Manatee counties since 2011.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: "Regressive Enterprises | Built to Hold Up",
-  description:
-    "Clearwater's coastal property and marine infrastructure company. Docks, boat lifts, seawalls, and storm-ready waterfront work since 2011. Keeping the standards. Upgrading everything else.",
+  description,
+  openGraph: {
+    title: "Regressive Enterprises | Built to Hold Up",
+    description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    images: ["/brand/logo-reference.png"],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Regressive Enterprises | Built to Hold Up",
+    description,
+    images: ["/brand/logo-reference.png"],
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  name: siteConfig.name,
+  description,
+  url: siteConfig.url,
+  telephone: siteConfig.phone.display,
+  email: siteConfig.email.display,
+  foundingDate: String(siteConfig.founded),
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: siteConfig.address.city,
+    addressRegion: siteConfig.address.state,
+  },
+  areaServed: siteConfig.address.serviceArea,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -27,8 +64,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col grain bg-plum text-ivory">
+      <body className="min-h-full flex flex-col grain bg-plum text-ivory pb-16 md:pb-0">
+        <a
+          href="#main"
+          className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-ivory px-5 py-2.5 text-sm font-semibold text-plum transition-transform focus:translate-y-0"
+        >
+          Skip to content
+        </a>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <SmoothScroll>{children}</SmoothScroll>
+        <MobileCTA />
       </body>
     </html>
   );

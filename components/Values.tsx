@@ -29,7 +29,7 @@ const VALUES = [
 
 export default function Values() {
   return (
-    <section className="border-t hairline bg-plum-deep px-6 py-28 sm:px-10 sm:py-40">
+    <section id="values" className="border-t hairline bg-plum-deep px-6 py-28 sm:px-10 sm:py-40">
       <div className="mx-auto max-w-[1600px]">
         <Reveal className="max-w-2xl">
           <p className="text-xs font-medium uppercase tracking-[0.35em] text-ivory-dim">

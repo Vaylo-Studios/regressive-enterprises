@@ -7,6 +7,9 @@ const SERVICES = [
   { n: "04", title: "Waterfront Structural Maintenance", desc: "Preventative work that keeps the emergency call from ever happening." },
   { n: "05", title: "Storm Prep & Recovery", desc: "Before the season and after the storm, on properties across the Gulf Coast." },
   { n: "06", title: "Commercial Marine Maintenance", desc: "Marinas, hospitality, and condo association properties on a real schedule." },
+  { n: "07", title: "Waterfront Inspections", desc: "A straight read on what's actually going on before you buy, sell, or renew a policy." },
+  { n: "08", title: "Exterior Coastal Repairs", desc: "Salt, sun, and storm surge wear down more than the dock. We handle the rest of the exterior too." },
+  { n: "09", title: "Small-Scale Marine Construction", desc: "New structures built to the same standard as everything we maintain." },
 ];
 
 export default function Services() {

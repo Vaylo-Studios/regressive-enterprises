@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { siteConfig } from "@/lib/site-config";
 
 const NAV = [
   { label: "Services", href: "#services" },
   { label: "Projects", href: "#still-standing" },
+  { label: "Values", href: "#values" },
   { label: "Commercial", href: "#commercial" },
   { label: "About", href: "#origin" },
 ];
@@ -47,12 +49,20 @@ export default function Header() {
           ))}
         </nav>
 
-        <a
-          href="#start"
-          className="rounded-full border hairline px-5 py-2.5 text-sm font-medium tracking-wide transition-colors hover:bg-ivory hover:text-plum"
-        >
-          Start a Project
-        </a>
+        <div className="flex items-center gap-3">
+          <a
+            href={siteConfig.phone.href}
+            className="hidden text-sm font-medium tracking-wide text-ivory-dim transition-colors hover:text-ivory sm:block"
+          >
+            {siteConfig.phone.display}
+          </a>
+          <a
+            href="#start"
+            className="rounded-full border hairline px-5 py-2.5 text-sm font-medium tracking-wide transition-colors hover:bg-ivory hover:text-plum"
+          >
+            Start a Project
+          </a>
+        </div>
       </div>
     </motion.header>
   );

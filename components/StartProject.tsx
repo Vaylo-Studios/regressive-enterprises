@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import { siteConfig } from "@/lib/site-config";
 
 const QUESTIONS = [
   "What type of property is this?",
@@ -21,8 +22,8 @@ export default function StartProject() {
           </h2>
           <p className="mt-6 text-lg text-ivory-dim">
             Send a few photos and tell us where the property is. We&rsquo;ll
-            tell you what the next step should be, no generic contact form
-            required.
+            tell you what the next step should be. Answer these in your
+            message and we can move fast.
           </p>
         </Reveal>
 
@@ -38,13 +39,19 @@ export default function StartProject() {
             ))}
           </Reveal>
 
-          <Reveal delay={0.2}>
-            {/* TODO: wire to Regressive's real phone number and intake form */}
+          <Reveal delay={0.2} className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+            {/* TODO(client-data): swap for Regressive's real phone/email once provided */}
             <a
-              href="#top"
-              className="inline-flex items-center gap-3 rounded-full bg-ivory px-8 py-4 text-base font-semibold tracking-wide text-plum transition-transform hover:-translate-y-0.5"
+              href={siteConfig.phone.href}
+              className="inline-flex items-center justify-center gap-3 rounded-full bg-ivory px-8 py-4 text-base font-semibold tracking-wide text-plum transition-transform hover:-translate-y-0.5"
             >
               Call the office
+            </a>
+            <a
+              href={`${siteConfig.email.href}?subject=New%20project%20inquiry`}
+              className="inline-flex items-center justify-center gap-3 rounded-full border hairline px-8 py-4 text-base font-semibold tracking-wide text-ivory transition-colors hover:bg-ivory hover:text-plum"
+            >
+              Email photos
             </a>
           </Reveal>
         </div>
