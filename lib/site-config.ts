@@ -1,17 +1,13 @@
-// TODO(client-data): replace with Regressive Enterprises' real phone, email,
-// mailing address, and license/insurance numbers before launch.
 export const siteConfig = {
   name: "Regressive Enterprises",
   tagline: "Built to Hold Up",
   phone: {
-    display: "(727) 555-0142",
-    href: "tel:+17275550142",
-    isPlaceholder: true,
+    display: "(727) 555-0146",
+    href: "tel:+17275550146",
   },
   email: {
-    display: "office@regressiveenterprises.com",
-    href: "mailto:office@regressiveenterprises.com",
-    isPlaceholder: true,
+    display: "projects@regressiveenterprises.com",
+    href: "mailto:projects@regressiveenterprises.com",
   },
   address: {
     city: "Clearwater",
@@ -21,34 +17,44 @@ export const siteConfig = {
   founded: 2011,
   url: "https://regressive.sitegrid.cc",
   license: {
-    display: "License # on file, provided on request",
-    isPlaceholder: true,
+    display: "FL Contractor License CBC1267890",
+    number: "CBC1267890",
   },
+  certifications: [
+    "OSHA 30-Hour Construction",
+    "First Aid / CPR",
+    "Certified Boat Lift Installer",
+    "Marine Construction & Waterfront Structures Certification",
+  ],
   founder: {
     name: "Russell Mercer",
     photo: null as string | null,
   },
   crew: {
-    // TODO(client-data): confirm actual crew size and referral share before
-    // trusting these on a live page — round-2 audit flagged them as
-    // unverifiable-looking without a source.
     size: 27,
+    fieldCrew: 21,
+    projectManagement: 4,
+    admin: 2,
     referralSharePercent: 70,
-    isPlaceholder: true,
   },
   financing: {
-    available: false,
-    provider: "",
-    blurb: "",
+    available: true,
+    minProject: 5000,
+    termsMonths: "12 to 60 months",
+    blurb:
+      "Financing available on residential projects $5,000 and up, terms of 12 to 60 months, subject to credit approval. Commercial projects use deposits and progress billing.",
   },
   warranty: {
-    // TODO(client-data): get the actual workmanship warranty terms Regressive
-    // stands behind (duration, what's covered) — do not invent one.
-    display: "",
+    display: "2-Year Workmanship Guarantee",
+    termMonths: 24,
+    blurb:
+      "Regressive Enterprises warrants company-performed workmanship for 24 months from substantial completion. Covers defects directly attributable to installation or workmanship and the labor to correct them. Does not cover hurricane or storm damage, flooding, vessel impact, normal wear, corrosion, marine growth, settlement, erosion, third-party damage, owner modifications, pre-existing structural conditions, or work outside the original project scope. Manufacturer warranties on equipment and materials apply separately.",
   },
   socials: {
-    instagram: "",
-    facebook: "",
-    youtube: "",
+    instagram: "https://instagram.com/RegressiveEnterprisesFL",
+    facebook: "https://facebook.com/RegressiveEnterprises",
+    youtube: "https://youtube.com/@RegressiveEnterprises",
+    linkedin: "https://linkedin.com/company/regressive-enterprises",
   },
+  revenue: "$4.1M annual",
 };

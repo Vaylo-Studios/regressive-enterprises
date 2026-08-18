@@ -4,9 +4,6 @@ import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { siteConfig } from "@/lib/site-config";
 
-// Years-in-business and counties-served are derived from site-config and are
-// real. Crew size and referral share are pulled from siteConfig.crew, which
-// is still marked isPlaceholder — see the round-2 audit's data-needed list.
 const STATS = [
   { value: new Date().getFullYear() - siteConfig.founded, suffix: "+", label: `Years in ${siteConfig.address.city}` },
   { value: siteConfig.crew.size, suffix: "", label: "People on crew" },

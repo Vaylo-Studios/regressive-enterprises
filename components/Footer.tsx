@@ -13,6 +13,7 @@ const SOCIALS = [
   { label: "Instagram", href: siteConfig.socials.instagram },
   { label: "Facebook", href: siteConfig.socials.facebook },
   { label: "YouTube", href: siteConfig.socials.youtube },
+  { label: "LinkedIn", href: siteConfig.socials.linkedin },
 ].filter((s) => s.href);
 
 export default function Footer() {

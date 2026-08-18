@@ -29,6 +29,12 @@ export default function ServicesPage() {
               job starts with a real look at the property, not a guess over
               the phone.
             </p>
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-xs uppercase tracking-[0.2em] text-ivory-dim">
+              <span>{siteConfig.license.display}</span>
+              {siteConfig.certifications.map((c) => (
+                <span key={c}>{c}</span>
+              ))}
+            </div>
           </Reveal>
 
           <div className="mt-16 grid gap-8 lg:grid-cols-2">
