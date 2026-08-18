@@ -72,7 +72,17 @@ export default function Footer() {
 
       <div className="mx-auto mt-12 flex max-w-[1600px] flex-col gap-2 border-t hairline pt-6 text-xs text-ivory-dim sm:flex-row sm:items-center sm:justify-between">
         <span>&copy; {siteConfig.founded}&ndash;present {siteConfig.name}. All rights reserved.</span>
-        <span>{siteConfig.license.display}</span>
+        <span>
+          {siteConfig.license.display} &middot; Built by{" "}
+          <a
+            href="https://vaylostudios.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4 transition-colors hover:text-ivory"
+          >
+            Vaylo Studios
+          </a>
+        </span>
       </div>
     </footer>
   );
