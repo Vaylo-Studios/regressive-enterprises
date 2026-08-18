@@ -35,16 +35,9 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 sm:px-10">
-        <a href="/" className="flex items-center gap-3">
-          <span className="font-accent text-4xl leading-none text-plum">R</span>
-          <span className="font-accent leading-[1.05] text-ink">
-            <span className="block text-base tracking-[0.08em] sm:text-lg">
-              Regressive
-            </span>
-            <span className="block text-base tracking-[0.08em] sm:text-lg">
-              Enterprises
-            </span>
-          </span>
+        <a href="/" className="font-display text-lg font-bold tracking-tight text-ink sm:text-xl">
+          REGRESSIVE
+          <span className="text-ink-dim"> ENTERPRISES</span>
         </a>
 
         <nav className="hidden items-center gap-8 text-sm tracking-wide text-ink-dim md:flex">

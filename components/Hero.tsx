@@ -14,8 +14,8 @@ export default function Hero() {
   const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
 
   return (
-    <section id="top" ref={ref} className="relative min-h-[640px] overflow-hidden sm:min-h-[720px] lg:min-h-[820px]">
-      <motion.div style={{ y: imageY }} className="absolute inset-0 -top-[8%] h-[116%]">
+    <section id="top" ref={ref} className="relative min-h-[560px] overflow-hidden sm:min-h-[640px] lg:min-h-[720px]">
+      <motion.div style={{ y: imageY }} className="absolute inset-0 -top-[4%] h-[108%]">
         <Image
           src="/gallery/site/hero-waterfront.png"
           alt="Waterfront seawall and dock along a Florida Gulf Coast property"
@@ -31,7 +31,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-10 flex min-h-[640px] max-w-xl flex-col justify-center px-6 pt-28 pb-14 sm:min-h-[720px] sm:px-10 sm:pt-32 lg:min-h-[820px]"
+        className="relative z-10 flex min-h-[560px] max-w-xl flex-col justify-center px-6 pt-28 pb-14 sm:min-h-[640px] sm:px-10 sm:pt-32 lg:min-h-[720px]"
       >
         <p className="text-xs font-medium uppercase tracking-[0.35em] text-ink-dim">
           Florida Gulf Coast

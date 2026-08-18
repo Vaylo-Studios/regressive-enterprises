@@ -14,7 +14,7 @@ const STATS = [
 export default function Origin() {
   return (
     <section id="origin" className="grid lg:grid-cols-2">
-      <Reveal className="relative min-h-[320px] w-full overflow-hidden lg:min-h-[680px]">
+      <Reveal className="relative min-h-[320px] w-full overflow-hidden lg:min-h-[560px]">
         <Image
           src="/gallery/site/boat.png"
           alt="Regressive Enterprises crew on the water off Florida's Gulf Coast"
