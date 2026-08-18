@@ -37,7 +37,7 @@ export default function Hero() {
             Florida&rsquo;s harshest conditions.
           </p>
 
-          <div className="mt-9 flex flex-col items-start gap-3">
+          <div className="mt-9 flex flex-wrap items-center gap-3">
             <a
               href="#still-standing"
               className="rounded-full bg-plum px-7 py-3.5 text-sm font-semibold tracking-wide text-ivory transition-transform hover:-translate-y-0.5"
