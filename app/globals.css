@@ -60,7 +60,6 @@ body {
 
 .font-accent {
   font-family: var(--font-accent), Georgia, serif;
-  font-style: italic;
 }
 
 /* fine grain / salt texture overlay */

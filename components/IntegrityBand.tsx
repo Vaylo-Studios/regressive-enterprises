@@ -19,11 +19,15 @@ export default function IntegrityBand() {
         </text>
       </svg>
 
-      <Reveal className="mx-auto grid max-w-[1600px] gap-6 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16">
-        <h2 className="font-display text-3xl font-bold leading-tight text-ivory sm:text-4xl">
-          We build with <span className="font-accent text-ivory-dim">integrity.</span> We
-          stand <span className="font-accent text-ivory-dim">behind our work.</span>
-        </h2>
+      <Reveal className="relative mx-auto grid max-w-[1600px] gap-6 lg:grid-cols-[1fr_1px_1fr] lg:items-center lg:gap-16">
+        <div>
+          <h2 className="font-accent text-3xl leading-tight text-ivory sm:text-4xl">
+            We build with <span className="italic text-ivory-dim">integrity.</span> We
+            stand <span className="italic text-ivory-dim">behind our work.</span>
+          </h2>
+          <div className="mt-5 h-px w-12 bg-ivory/30" />
+        </div>
+        <div aria-hidden className="hidden h-16 w-px bg-ivory/20 lg:block" />
         <p className="max-w-md text-lg text-ivory-dim">
           From small repairs to full-scale construction, we deliver lasting
           solutions for docks, seawalls, boat lifts, and more.
