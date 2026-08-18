@@ -1,9 +1,10 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import StatsMarquee from "@/components/StatsMarquee";
-import Origin from "@/components/Origin";
-import Services from "@/components/Services";
+import IntegrityBand from "@/components/IntegrityBand";
 import StillStanding from "@/components/StillStanding";
+import Origin from "@/components/Origin";
+import WaterCta from "@/components/WaterCta";
+import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import Values from "@/components/Values";
 import Commercial from "@/components/Commercial";
@@ -17,10 +18,11 @@ export default function Home() {
       <Header />
       <main id="main">
         <Hero />
-        <StatsMarquee />
-        <Origin />
-        <Services />
+        <IntegrityBand />
         <StillStanding />
+        <Origin />
+        <WaterCta />
+        <Services />
         <Testimonials />
         <Values />
         <Commercial />

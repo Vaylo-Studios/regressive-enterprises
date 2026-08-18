@@ -2,11 +2,11 @@ import { siteConfig } from "@/lib/site-config";
 
 const NAV = [
   { label: "Services", href: "/services" },
-  { label: "Gallery", href: "/gallery" },
+  { label: "Projects", href: "/gallery" },
+  { label: "About", href: "/#origin" },
   { label: "Commercial", href: "/commercial" },
-  { label: "Values", href: "/#values" },
   { label: "FAQ", href: "/#faq" },
-  { label: "Start a Project", href: "/#start" },
+  { label: "Contact", href: "/#start" },
 ];
 
 const SOCIALS = [

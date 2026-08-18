@@ -15,6 +15,7 @@ export const GALLERY: GalleryProject[] = [
     image: "/gallery/seawall-dock-boatlift-finished-01.jpg",
     caption: "Completed seawall, dock, and boat lift install, Pinellas County waterfront.",
     category: "Seawalls",
+    location: "Pinellas County",
   },
   {
     image: "/gallery/seawall-dock-boatlift-01.jpg",
@@ -50,15 +51,18 @@ export const GALLERY: GalleryProject[] = [
     image: "/gallery/site/dock-boat-lift.png",
     caption: "Dock and boat lift install on a Gulf Coast waterfront property.",
     category: "Boat Lifts",
+    location: "Gulf Coast",
   },
   {
     image: "/gallery/site/seawall.png",
     caption: "Seawall along a residential waterfront property.",
     category: "Seawalls",
+    location: "Gulf Coast",
   },
   {
     image: "/gallery/site/dock-replacement.png",
     caption: "Dock replacement on a Gulf Coast waterfront property.",
     category: "Docks",
+    location: "Gulf Coast",
   },
 ];

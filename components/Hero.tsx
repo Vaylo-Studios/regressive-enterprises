@@ -15,29 +15,29 @@ export default function Hero() {
 
   return (
     <section id="top" ref={ref} className="relative pt-24 sm:pt-28">
-      <div className="mx-auto grid max-w-[1600px] items-center gap-10 px-6 pb-14 pt-8 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:px-10 lg:pb-0 lg:pt-0">
+      <div className="grid min-h-[560px] items-stretch sm:min-h-[640px] lg:grid-cols-[1fr_1.15fr] lg:min-h-[680px]">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="relative z-10 flex flex-col justify-center px-6 py-14 sm:px-10 sm:py-16 lg:py-20"
         >
           <p className="text-xs font-medium uppercase tracking-[0.35em] text-ink-dim">
             Florida Gulf Coast
           </p>
 
           <h1 className="font-display mt-4 text-5xl font-bold leading-[0.95] tracking-tight text-ink sm:text-6xl lg:text-7xl">
-            Marine construction.
+            Built for
             <br />
-            <span className="font-accent text-plum">Built to last.</span>
+            <span className="font-accent text-plum">the coast.</span>
           </h1>
 
-          <p className="mt-6 max-w-md text-lg text-ink-dim">
-            Dock repair, boat lifts, seawalls, and storm-ready waterfront
-            structures across Florida&rsquo;s Gulf Coast. Fifteen years in,
-            we still answer the phone and stand behind the work.
+          <p className="mt-6 max-w-sm text-lg text-ink-dim">
+            Marine construction and waterfront solutions that hold up to
+            Florida&rsquo;s harshest conditions.
           </p>
 
-          <div className="mt-9 flex flex-wrap items-center gap-4">
+          <div className="mt-9 flex flex-col items-start gap-3">
             <a
               href="#still-standing"
               className="rounded-full bg-plum px-7 py-3.5 text-sm font-semibold tracking-wide text-ivory transition-transform hover:-translate-y-0.5"
@@ -46,7 +46,7 @@ export default function Hero() {
             </a>
             <a
               href="#services"
-              className="inline-flex items-center gap-2 text-sm font-medium tracking-wide text-ink transition-colors hover:text-plum"
+              className="inline-flex items-center gap-2 rounded-full border hairline px-7 py-3.5 text-sm font-medium tracking-wide text-ink transition-colors hover:bg-plum hover:text-ivory"
             >
               Our Services
               <span aria-hidden>&rarr;</span>
@@ -55,10 +55,10 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
+          initial={{ opacity: 0, scale: 1.02 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl sm:aspect-[16/10] lg:aspect-[4/5] lg:h-[80vh] lg:max-h-[820px]"
+          className="relative min-h-[320px] w-full overflow-hidden lg:min-h-0"
         >
           <motion.div style={{ y: imageY }} className="absolute inset-0 -top-[8%] h-[116%]">
             <Image

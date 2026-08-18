@@ -2,71 +2,80 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { GALLERY } from "@/lib/gallery";
 
+const FEATURED = GALLERY.filter((p) => p.image.startsWith("/gallery/site/"));
+
 export default function StillStanding() {
+  const projects = (FEATURED.length > 0 ? FEATURED : GALLERY).slice(0, 3);
+
   return (
-    <section id="still-standing" className="bg-ivory-dim/40 px-6 py-24 sm:px-10 sm:py-32">
+    <section id="still-standing" className="px-6 py-24 sm:px-10 sm:py-32">
       <div className="mx-auto max-w-[1600px]">
-        <Reveal className="max-w-2xl">
-          <p className="text-xs font-medium uppercase tracking-[0.35em] text-ink-dim">
-            Featured Projects
-          </p>
-          <h2 className="font-display mt-4 text-4xl font-bold leading-tight text-ink sm:text-6xl">
-            We don&rsquo;t build for the photograph.
-            <br />
-            <span className="font-accent text-plum">We build for the fifth hurricane season.</span>
-          </h2>
-          <p className="mt-6 text-lg text-ink-dim">
-            Every so often we go back and check on work we finished years
-            ago. We&rsquo;re building out a photo record of that work,
-            project by project, so you can see it instead of taking our
-            word for it.
-          </p>
+        <Reveal className="flex flex-wrap items-end justify-between gap-6">
+          <div className="max-w-xl">
+            <p className="text-xs font-medium uppercase tracking-[0.35em] text-ink-dim">
+              Featured Projects
+            </p>
+            <h2 className="font-display mt-4 text-4xl font-bold leading-tight text-ink sm:text-6xl">
+              Real work.
+              <br />
+              <span className="font-accent text-plum">Right here.</span>
+            </h2>
+          </div>
+          <a
+            href="/gallery"
+            className="inline-flex items-center gap-3 text-sm font-semibold tracking-wide text-plum underline underline-offset-4"
+          >
+            View all projects
+            <span aria-hidden>&rarr;</span>
+          </a>
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-14">
-          {GALLERY.length > 0 ? (
-            <>
-              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                {GALLERY.slice(0, 3).map((p) => (
-                  <div
-                    key={p.image}
-                    className="group overflow-hidden rounded-2xl border hairline bg-ivory"
-                  >
-                    <div className="relative aspect-[4/3] w-full">
-                      <Image
-                        src={p.image}
-                        alt={p.caption}
-                        fill
-                        sizes="(min-width: 640px) 33vw, 100vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <span className="inline-block rounded-full bg-plum/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.15em] text-plum">
-                        {p.category}
-                      </span>
-                      <p className="mt-3 text-sm leading-relaxed text-ink-dim">{p.caption}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
+        {projects.length > 0 ? (
+          <Reveal delay={0.1} className="mt-14 grid gap-px overflow-hidden bg-ink/10 sm:grid-cols-3">
+            {projects.map((p) => (
               <a
+                key={p.image}
                 href="/gallery"
-                className="mt-10 inline-flex items-center gap-3 text-sm font-semibold tracking-wide text-plum underline underline-offset-4"
+                className="group block bg-ivory transition-colors hover:bg-ivory-dim/60"
               >
-                See all {GALLERY.length} projects
+                <div className="relative aspect-[4/3] w-full overflow-hidden">
+                  <Image
+                    src={p.image}
+                    alt={p.caption}
+                    fill
+                    sizes="(min-width: 640px) 33vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex items-center justify-between gap-4 p-6">
+                  <div>
+                    <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-dim">
+                      {p.category}
+                    </span>
+                    <p className="font-display mt-1 text-lg font-bold text-ink">
+                      {p.location ?? p.category}
+                    </p>
+                  </div>
+                  <span
+                    aria-hidden
+                    className="shrink-0 text-lg text-plum transition-transform group-hover:translate-x-1"
+                  >
+                    &rarr;
+                  </span>
+                </div>
               </a>
-            </>
-          ) : (
+            ))}
+          </Reveal>
+        ) : (
+          <Reveal delay={0.1} className="mt-14">
             <a
               href="/gallery"
               className="inline-flex items-center gap-3 rounded-full bg-plum px-7 py-3.5 text-sm font-semibold tracking-wide text-ivory transition-transform hover:-translate-y-0.5"
             >
               See the project gallery
             </a>
-          )}
-        </Reveal>
+          </Reveal>
+        )}
       </div>
     </section>
   );

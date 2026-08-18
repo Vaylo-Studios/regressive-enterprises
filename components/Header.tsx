@@ -6,10 +6,10 @@ import { siteConfig } from "@/lib/site-config";
 
 const NAV = [
   { label: "Services", href: "/services" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Commercial", href: "/commercial" },
-  { label: "Values", href: "/#values" },
+  { label: "Projects", href: "/gallery" },
   { label: "About", href: "/#origin" },
+  { label: "Commercial", href: "/commercial" },
+  { label: "Contact", href: "/#start" },
 ];
 
 export default function Header() {
@@ -60,7 +60,7 @@ export default function Header() {
             href="/#start"
             className="rounded-full bg-plum px-5 py-2.5 text-sm font-medium tracking-wide text-ivory transition-transform hover:-translate-y-0.5"
           >
-            Start a Project
+            Request a Consult
           </a>
         </div>
       </div>
