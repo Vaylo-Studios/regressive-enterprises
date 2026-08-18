@@ -24,25 +24,52 @@ export default function StillStanding() {
 
         <Reveal delay={0.1} className="mt-14">
           {GALLERY.length > 0 ? (
-            <div className="grid gap-8 sm:grid-cols-3">
-              {GALLERY.slice(0, 3).map((p) => (
-                <div key={p.image} className="group relative overflow-hidden rounded-2xl border hairline">
-                  <div className="relative aspect-[4/3] w-full">
+            <>
+              <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
+                <div className="group relative overflow-hidden rounded-2xl border hairline">
+                  <div className="relative aspect-[4/3] w-full lg:aspect-[16/11]">
                     <Image
-                      src={p.image}
-                      alt={p.caption}
+                      src={GALLERY[0].image}
+                      alt={GALLERY[0].caption}
                       fill
-                      sizes="(min-width: 640px) 33vw, 100vw"
+                      sizes="(min-width: 1024px) 55vw, 100vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div className="p-6">
-                    <span className="font-display text-sm text-ivory-dim">{p.category}</span>
-                    <p className="mt-2 text-sm leading-relaxed text-ivory-dim">{p.caption}</p>
+                    <span className="font-display text-sm text-ivory-dim">{GALLERY[0].category}</span>
+                    <p className="mt-2 text-sm leading-relaxed text-ivory-dim">{GALLERY[0].caption}</p>
                   </div>
                 </div>
-              ))}
-            </div>
+
+                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-1">
+                  {GALLERY.slice(1, 3).map((p) => (
+                    <div key={p.image} className="group relative overflow-hidden rounded-2xl border hairline">
+                      <div className="relative aspect-[4/3] w-full">
+                        <Image
+                          src={p.image}
+                          alt={p.caption}
+                          fill
+                          sizes="(min-width: 1024px) 40vw, 100vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="p-5">
+                        <span className="font-display text-xs text-ivory-dim">{p.category}</span>
+                        <p className="mt-1 text-sm leading-relaxed text-ivory-dim">{p.caption}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <a
+                href="/gallery"
+                className="mt-10 inline-flex items-center gap-3 text-sm font-semibold tracking-wide text-ivory underline underline-offset-4"
+              >
+                See all {GALLERY.length} projects
+              </a>
+            </>
           ) : (
             <a
               href="/gallery"

@@ -26,26 +26,45 @@ export default function GalleryPage() {
           </Reveal>
 
           {GALLERY.length > 0 ? (
-            <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {GALLERY.map((p, i) => (
-                <Reveal
-                  key={p.image}
-                  delay={i * 0.04}
-                  className="overflow-hidden rounded-2xl border hairline"
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={p.image} alt={p.caption} className="aspect-[4/3] w-full object-cover" />
-                  <div className="p-6">
-                    <span className="text-xs uppercase tracking-[0.2em] text-ivory-dim">
-                      {p.category}
-                      {p.location ? ` · ${p.location}` : ""}
-                      {p.year ? ` · ${p.year}` : ""}
-                    </span>
-                    <p className="mt-2 text-sm text-ivory-dim">{p.caption}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
+            <>
+              <Reveal delay={0.04} className="mt-16 overflow-hidden rounded-2xl border hairline">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={GALLERY[0].image}
+                  alt={GALLERY[0].caption}
+                  className="aspect-[16/9] w-full object-cover sm:aspect-[21/9]"
+                />
+                <div className="p-6 sm:p-8">
+                  <span className="text-xs uppercase tracking-[0.2em] text-ivory-dim">
+                    {GALLERY[0].category}
+                    {GALLERY[0].location ? ` · ${GALLERY[0].location}` : ""}
+                    {GALLERY[0].year ? ` · ${GALLERY[0].year}` : ""}
+                  </span>
+                  <p className="mt-2 text-base text-ivory-dim">{GALLERY[0].caption}</p>
+                </div>
+              </Reveal>
+
+              <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                {GALLERY.slice(1).map((p, i) => (
+                  <Reveal
+                    key={p.image}
+                    delay={i * 0.04}
+                    className="overflow-hidden rounded-2xl border hairline"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={p.image} alt={p.caption} className="aspect-[4/3] w-full object-cover" />
+                    <div className="p-6">
+                      <span className="text-xs uppercase tracking-[0.2em] text-ivory-dim">
+                        {p.category}
+                        {p.location ? ` · ${p.location}` : ""}
+                        {p.year ? ` · ${p.year}` : ""}
+                      </span>
+                      <p className="mt-2 text-sm text-ivory-dim">{p.caption}</p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </>
           ) : (
             <Reveal delay={0.1} className="mt-16 rounded-2xl border hairline p-10 sm:p-16">
               <p className="text-lg text-ivory-dim">

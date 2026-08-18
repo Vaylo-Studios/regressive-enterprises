@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { SERVICES } from "@/lib/services";
 
@@ -14,7 +15,17 @@ export default function Services() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border hairline sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal delay={0.06} className="relative mt-10 aspect-[21/9] w-full overflow-hidden rounded-2xl border hairline sm:mt-14">
+          <Image
+            src="/gallery/crew-seawall-cap-pour-01.jpg"
+            alt="Regressive Enterprises crew forming and pouring a seawall cap on-site"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </Reveal>
+
+        <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border hairline sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s, i) => (
             <Reveal key={s.n} delay={i * 0.05} className="hairline border-b border-r bg-plum p-8 sm:p-10">
               <span className="font-display text-sm text-ivory-dim">{s.n}</span>

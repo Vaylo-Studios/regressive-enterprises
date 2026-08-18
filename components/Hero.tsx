@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 
 export default function Hero() {
@@ -11,6 +12,7 @@ export default function Hero() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "35%"]);
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const lineWidth = useTransform(scrollYProgress, [0, 1], ["100%", "40%"]);
 
@@ -20,6 +22,19 @@ export default function Hero() {
       ref={ref}
       className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden px-6 pt-32 pb-10 sm:px-10"
     >
+      <motion.div style={{ y: imageY }} className="pointer-events-none absolute inset-0 -top-[10%] h-[120%]">
+        <Image
+          src="/gallery/seawall-dock-boatlift-finished-01.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-plum via-plum/70 to-plum/30" />
+        <div className="absolute inset-0 bg-plum/30" />
+      </motion.div>
+
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.07]"
         style={{
