@@ -62,8 +62,8 @@ export default function Hero() {
         >
           <motion.div style={{ y: imageY }} className="absolute inset-0 -top-[8%] h-[116%]">
             <Image
-              src="/gallery/seawall-dock-boatlift-finished-01.jpg"
-              alt="Completed seawall, dock, and boat lift install on a Pinellas County waterfront property"
+              src="/gallery/site/hero-waterfront.png"
+              alt="Waterfront seawall and dock along a Florida Gulf Coast property"
               fill
               priority
               sizes="(min-width: 1024px) 55vw, 100vw"

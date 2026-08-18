@@ -46,4 +46,19 @@ export const GALLERY: GalleryProject[] = [
     caption: "Marina dock decking, commercial waterfront maintenance, and boat lift work.",
     category: "Commercial",
   },
+  {
+    image: "/gallery/site/dock-boat-lift.png",
+    caption: "Dock and boat lift install on a Gulf Coast waterfront property.",
+    category: "Boat Lifts",
+  },
+  {
+    image: "/gallery/site/seawall.png",
+    caption: "Seawall along a residential waterfront property.",
+    category: "Seawalls",
+  },
+  {
+    image: "/gallery/site/dock-replacement.png",
+    caption: "Dock replacement on a Gulf Coast waterfront property.",
+    category: "Docks",
+  },
 ];

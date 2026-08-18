@@ -13,7 +13,15 @@ const STATS = [
 
 export default function Origin() {
   return (
-    <section id="origin" className="px-6 py-24 sm:px-10 sm:py-32">
+    <section id="origin" className="relative overflow-hidden px-6 py-24 sm:px-10 sm:py-32">
+      <Image
+        src="/gallery/site/leaf-background.png"
+        alt=""
+        aria-hidden
+        fill
+        sizes="100vw"
+        className="pointer-events-none absolute inset-0 -z-10 object-cover opacity-40 mix-blend-multiply"
+      />
       <div className="mx-auto grid max-w-[1600px] gap-12 lg:grid-cols-[0.9fr_1.2fr_0.7fr] lg:gap-10">
         {siteConfig.founder.photo ? (
           <Reveal className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl lg:aspect-auto">
