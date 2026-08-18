@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { siteConfig } from "@/lib/site-config";
 
 export default function Origin() {
   return (
@@ -11,6 +13,21 @@ export default function Origin() {
           <h2 className="font-display mt-4 text-4xl font-bold leading-tight sm:text-6xl">
             The name started as a joke.
           </h2>
+          {siteConfig.founder.photo ? (
+            <div className="relative mt-8 aspect-[4/5] w-full max-w-xs overflow-hidden rounded-2xl border hairline">
+              <Image
+                src={siteConfig.founder.photo}
+                alt={siteConfig.founder.name}
+                fill
+                sizes="(min-width: 1024px) 320px, 60vw"
+                className="object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-plum/90 to-transparent p-4">
+                <p className="text-sm font-semibold text-ivory">{siteConfig.founder.name}</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-ivory-dim">Founder</p>
+              </div>
+            </div>
+          ) : null}
         </Reveal>
 
         <Reveal delay={0.1} className="space-y-6 text-lg leading-relaxed text-ivory-dim">

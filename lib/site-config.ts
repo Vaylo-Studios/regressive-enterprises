@@ -2,8 +2,8 @@ export const siteConfig = {
   name: "Regressive Enterprises",
   tagline: "Built to Hold Up",
   phone: {
-    display: "(727) 555-0146",
-    href: "tel:+17275550146",
+    display: "(727) 382-9901",
+    href: "tel:+17273829901",
   },
   email: {
     display: "projects@regressiveenterprises.com",
@@ -28,7 +28,7 @@ export const siteConfig = {
   ],
   founder: {
     name: "Russell Mercer",
-    photo: null as string | null,
+    photo: "/team/russell-mercer-founder.jpg" as string | null,
   },
   crew: {
     size: 27,
