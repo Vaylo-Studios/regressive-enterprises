@@ -10,4 +10,10 @@ export type GalleryProject = {
   year?: string;
 };
 
-export const GALLERY: GalleryProject[] = [];
+export const GALLERY: GalleryProject[] = [
+  {
+    image: "/gallery/seawall-dock-boatlift-01.jpg",
+    caption: "New seawall pour, dock, and boat lift install, Pinellas County waterfront.",
+    category: "Seawalls",
+  },
+];
