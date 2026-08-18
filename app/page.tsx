@@ -1,9 +1,10 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import StatsMarquee from "@/components/StatsMarquee";
+import Origin from "@/components/Origin";
 import Services from "@/components/Services";
 import StillStanding from "@/components/StillStanding";
-import Origin from "@/components/Origin";
+import Values from "@/components/Values";
 import Commercial from "@/components/Commercial";
 import StartProject from "@/components/StartProject";
 import Footer from "@/components/Footer";
@@ -15,9 +16,10 @@ export default function Home() {
       <main>
         <Hero />
         <StatsMarquee />
+        <Origin />
         <Services />
         <StillStanding />
-        <Origin />
+        <Values />
         <Commercial />
         <StartProject />
       </main>
