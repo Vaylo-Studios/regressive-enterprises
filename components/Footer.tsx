@@ -74,7 +74,7 @@ export default function Footer() {
       <div className="mx-auto mt-12 flex max-w-[1600px] flex-col gap-2 border-t hairline pt-6 text-xs text-ink-dim sm:flex-row sm:items-center sm:justify-between">
         <span>&copy; {siteConfig.founded}&ndash;present {siteConfig.name}. All rights reserved.</span>
         <span>
-          {siteConfig.license.display} &middot; Built by{" "}
+          Built by{" "}
           <a
             href="https://vaylostudios.com"
             target="_blank"

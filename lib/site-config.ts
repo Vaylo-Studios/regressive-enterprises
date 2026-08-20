@@ -16,10 +16,6 @@ export const siteConfig = {
   },
   founded: 2011,
   url: "https://regressive.sitegrid.cc",
-  license: {
-    display: "FL Contractor License CBC1267890",
-    number: "CBC1267890",
-  },
   certifications: [
     "OSHA 30-Hour Construction",
     "First Aid / CPR",

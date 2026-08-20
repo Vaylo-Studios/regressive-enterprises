@@ -30,7 +30,6 @@ export default function ServicesPage() {
               the phone.
             </p>
             <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-xs uppercase tracking-[0.2em] text-ink-dim">
-              <span>{siteConfig.license.display}</span>
               {siteConfig.certifications.map((c) => (
                 <span key={c}>{c}</span>
               ))}

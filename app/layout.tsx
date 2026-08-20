@@ -58,7 +58,6 @@ const jsonLd = {
   telephone: siteConfig.phone.display,
   email: siteConfig.email.display,
   foundingDate: String(siteConfig.founded),
-  identifier: siteConfig.license.number,
   address: {
     "@type": "PostalAddress",
     addressLocality: siteConfig.address.city,
